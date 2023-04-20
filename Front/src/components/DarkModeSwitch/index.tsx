@@ -38,11 +38,12 @@ export default function DarkModeSwitch() {
 
   return (
     <div className="absolute right-10 top-3 flex">
-      <BsFillMoonStarsFill className="text-gray-900 mt-3" />
+      <BsFillMoonStarsFill className="text-gray-900 dark:text-gray-100 mt-3" />
       <Switch
         id="switch1"
         checked={!isDarkMode}
         onClick={() => toggleDarkMode()}
+        className="dark:text-gray-300"
       />
       <BsFillSunFill className="text-yellow-700 mt-3" />
     </div>
