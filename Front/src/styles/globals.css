@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html:not(.dark) {
+  @apply bg-gray-100 text-gray-900;
+  && .dialog {
+    @apply bg-gray-900 text-gray-100;
+  }
+}
+
+html.dark {
+  @apply bg-gray-900 text-gray-100;
+  && .dialog {
+    @apply bg-gray-700;
+  }
+}
+
+
