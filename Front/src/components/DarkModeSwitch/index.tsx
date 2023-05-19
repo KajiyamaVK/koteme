@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import { GeneralContext } from "@/context/generalContext";
 import { GeneralContextType } from "@/context/interface";
 import { BsFillMoonStarsFill } from "react-icons/bs";
-import {BsFillSunFill} from "react-icons/bs";
+import { BsFillSunFill } from "react-icons/bs";
 
 export default function DarkModeSwitch() {
   const { isDarkMode, updateDarkMode } = useContext(
@@ -37,8 +37,8 @@ export default function DarkModeSwitch() {
   }
 
   return (
-    <div className="absolute right-10 top-3 flex">
-      <BsFillMoonStarsFill className="text-gray-900 dark:text-gray-100 mt-3" />
+    <div className="absolute right-10 top-3 flex z-50">
+      <BsFillMoonStarsFill className="xl:text-gray-900 dark:text-gray-100  text-gray-100 mt-3" />
       <Switch
         id="switch1"
         checked={!isDarkMode}

@@ -1,15 +1,30 @@
 import { createContext, ReactNode, useState } from "react";
-import { GeneralContextType } from "./interface";
+import { IGeneralContext } from "./interface";
 
-export const GeneralContext = createContext<GeneralContextType | null>(null);
+export const GeneralContext = createContext({
+  isAuthenticated: false,
+  isDarkMode: false,
+  updateDarkMode: () => {},
+  updateIsAuthenticated: () => {},
+} as IGeneralContext);
 
-const GeneralContextProvider = (children: ReactNode) => {
+export const GeneralContextProvider = ({
+  children,
+}: {
+  children: ReactNode;
+}) => {
   const [isDarkMode, updateDarkMode] = useState<boolean>(false);
-
- 
+  const [isAuthenticated, updateIsAuthenticated] = useState<boolean>(false);
 
   return (
-    <GeneralContext.Provider value={{ isDarkMode, updateDarkMode }}>
+    <GeneralContext.Provider
+      value={{
+        isDarkMode,
+        updateDarkMode,
+        isAuthenticated,
+        updateIsAuthenticated,
+      }}
+    >
       {children}
     </GeneralContext.Provider>
   );
