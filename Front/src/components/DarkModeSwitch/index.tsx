@@ -1,14 +1,14 @@
 import Switch from "@mui/material/Switch";
 import { useContext, useEffect } from "react";
 import { GeneralContext } from "@/context/generalContext";
-import { GeneralContextType } from "@/context/interface";
+import { IGeneralContext } from "@/context/interface";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { BsFillSunFill } from "react-icons/bs";
 
 export default function DarkModeSwitch() {
   const { isDarkMode, updateDarkMode } = useContext(
     GeneralContext
-  ) as GeneralContextType;
+  ) as IGeneralContext;
 
   useEffect(() => {
     let isOSDarkMode;
