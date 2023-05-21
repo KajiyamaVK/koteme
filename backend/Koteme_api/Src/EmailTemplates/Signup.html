@@ -1,0 +1,100 @@
+<!--A template for e-mail confirmation for sign up-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up Confirmation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      font-family: "Hind Siliguri", sans-serif;
+      font-size: 1.2rem;
+    }
+  </style>
+  <body>
+    <div
+      style="
+        display: flex;
+        background-color: black;
+        width: fit-content;
+        padding: 2px;
+        font-weight: 700;
+        margin: 40px 0px 50px 40px;
+      "
+    >
+      <span style="background-color: white; background-color: white">K</span>
+      <span style="color: white">ote</span>
+      <span style="color: aqua">M</span>
+      <span style="color: white">e.</span>
+    </div>
+
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 40px;
+      "
+    >
+      <div
+        style="
+          width: clamp(500px, 50vw, 700px);
+          border: 2px solid black;
+          padding: 20px;
+          border-radius: 20px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        "
+      >
+        <h1>Seja bem vindo</h1>
+        <div>
+          <span>{userFirstName}, obrigado por se cadastrar na </span>
+          <span
+            style="
+              display: inline-flex;
+              background-color: black;
+              width: fit-content;
+              padding: 2px;
+              font-weight: 700;
+            "
+          >
+            <span style="background-color: white; color: black">K</span>
+            <span style="color: white">ote</span>
+            <span style="color: aqua">M</span>
+            <span style="color: white">e.</span>
+          </span>
+          <p>
+            Só falta mais um pequeno passo para que sua jornada de economias se
+            inicie. Por gentileza, precisamos que você confirme que este e-mail
+            é seu clicando no link abaixo.
+          </p>
+          <button
+            style="
+              background-color: rgb(0, 0, 0);
+              width: 300px;
+              padding: 20px;
+              margin: 0px auto;
+              border-style: none;
+              border-radius: 10px;
+              box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+              cursor: pointer;
+              font-weight: 700;
+              color: white;
+              font-size: 25px;
+            "
+            src="{confirmationLink}"
+          >
+            Confirmar e-mail
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
