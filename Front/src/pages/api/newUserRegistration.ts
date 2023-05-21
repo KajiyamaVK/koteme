@@ -1,12 +1,4 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import jwt from "next-auth/jwt";
-import { getToken } from "next-auth/jwt";
-
-interface IUser {
-  email: string;
-  password: string;
-  hash: string;
-}
 
 export default function newUserRegistration(
   req: NextApiRequest,

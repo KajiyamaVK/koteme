@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watch",
+    "test": "jest",
     "testlog": "jest --verbose > testLog.txt",
     "test:ci": "jest --ci"
   },
@@ -16,6 +16,7 @@
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.1",
+    "@types/jest": "^29.5.1",
     "@types/node": "18.15.11",
     "@types/react": "18.0.37",
     "@types/react-dom": "18.0.11",
@@ -24,6 +25,7 @@
     "bcryptjs": "^2.4.3",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
+    "eslint-plugin-jest": "^27.2.1",
     "next": "13.3.0",
     "next-auth": "^4.22.1",
     "postcss": "8.4.23",
@@ -32,6 +34,7 @@
     "react-hook-form": "^7.43.9",
     "react-icons": "^4.8.0",
     "tailwindcss": "3.3.1",
+    "ts-jest": "^29.1.0",
     "typescript": "5.0.4"
   },
   "devDependencies": {
