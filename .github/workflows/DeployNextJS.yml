@@ -12,6 +12,14 @@ jobs:
         run: npm ci
         working-directory: frontend
 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        run: npm run build
+        working-directory: frontend
+
   run_tests:
     runs-on: ubuntu-latest
     steps:
@@ -26,4 +34,4 @@ jobs:
       - name: Install Vercel CLI
         run: npm i -g vercel
       - name: Deploy to Vercel
-        run: vercel deploy --prod --confirm --token ${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
