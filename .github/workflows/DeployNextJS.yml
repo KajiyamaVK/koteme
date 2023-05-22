@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  Install_dependencies:
+  Buid_Test_Deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -12,25 +12,14 @@ jobs:
         run: npm ci
         working-directory: frontend
 
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
       - name: Build
         run: npm run build
         working-directory: frontend
 
-  run_tests:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
       - name: Run tests
         run: npm test
         working-directory: frontend
 
-  deploy_to_vercel:
-    runs-on: ubuntu-latest
-    steps:
       - name: Install Vercel CLI
         run: npm i -g vercel
       - name: Deploy to Vercel
