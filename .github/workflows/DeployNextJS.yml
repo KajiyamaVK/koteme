@@ -28,9 +28,6 @@ jobs:
         run: npm run build
         working-directory: frontend
 
-      - name: Export Next.js app
-        run: npx next export
-        working-directory: frontend
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -45,4 +42,4 @@ jobs:
           app-name: Koteme
           slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3C596C359033440C89C9B26944232B18 }}
-          package: frontend/out
+          package: frontend/.next
