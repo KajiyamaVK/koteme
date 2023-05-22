@@ -37,17 +37,17 @@ if (app.Environment.IsDevelopment())
   app.UseDeveloperExceptionPage();
   app.UseAuthentication();
   app.UseAuthorization();
-  app.UseSwagger(c =>
-    {
-      c.RouteTemplate = "swagger/{documentName}/swagger.json";
-    });
-  app.UseSwaggerUI(c =>
-    {
-      c.SwaggerEndpoint("/swagger/v0/swagger.json", "KoteMeApi V0");
-    });
+
 }
 
-
+app.UseSwagger(c =>
+   {
+     c.RouteTemplate = "swagger/{documentName}/swagger.json";
+   });
+app.UseSwaggerUI(c =>
+  {
+    c.SwaggerEndpoint("/swagger/v0/swagger.json", "KoteMeApi V0");
+  });
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
