@@ -29,7 +29,7 @@ public class EmailService
 
     using (var smtpClient = new SmtpClient(smtpServer, smtpPort))
     {
-      smtpClient.EnableSsl = true; //dependendo do seu servidor smtp você talvez precise habilitar o SSL
+      smtpClient.EnableSsl = true; //dependendo do seu servidor smtp você talvez precise habilitar o SSL.
       smtpClient.UseDefaultCredentials = false;
       smtpClient.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
 
