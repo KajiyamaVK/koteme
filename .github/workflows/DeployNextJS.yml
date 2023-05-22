@@ -45,4 +45,4 @@ jobs:
           app-name: Koteme
           slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3C596C359033440C89C9B26944232B18 }}
-          package: frontend/.next
+          package: frontend/out
