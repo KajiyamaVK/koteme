@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'Koteme'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3057BC411CBF4EC48A5DC0EF48817759 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3C596C359033440C89C9B26944232B18 }}
           package: .
