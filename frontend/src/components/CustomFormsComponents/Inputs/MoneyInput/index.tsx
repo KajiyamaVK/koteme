@@ -94,7 +94,7 @@ const MoneyInput: React.FC<MoneyInputProps> = ({
     const previousHasError = hasError;
 
     // Se não houver erro, seta o hasError para false, porém se o hasError já for true, não seta para false. Se o hasError já estava como true, isso que dizer que outro componente já está com erro.
-    const isError = !error && previousHasError ? false : true;
+    const isError = !error && !previousHasError ? false : true;
 
     if (isError !== hasError) {
       setHasError(isError);
