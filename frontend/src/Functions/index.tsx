@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 export function scrollTo(section: string) {
   const element = document.getElementById(section);
 

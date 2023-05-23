@@ -1,17 +1,19 @@
 import Button from "@mui/material/Button";
 import { useState, FormEvent } from "react";
 import Image from "next/image";
-import img1 from "@@/imgs/login/img1.jpg";
+import img1 from "public/imgs/login/img1.jpg";
 import Logo from "@/components/Logo";
-import img2 from "@@/imgs/login/img2.jpg";
-import googleLogo from "@@/imgs/login/google_logo.png";
+import img2 from "public/imgs/login/img2.jpg";
+import googleLogo from "public/imgs/login/google_logo.png";
 import { useEffect } from "react";
 import { signIn, getSession } from "next-auth/react";
 import { GetServerSideProps } from "next";
 import { hashPassword } from "@/Functions";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import PasswordInput from "@/components/CustomFormsComponents/Inputs/PasswordInput";
-import EmailInput from "@/components/CustomFormsComponents/Inputs/EmailInput";
+import {
+  PasswordInput,
+  EmailInput,
+} from "@/components/CustomFormsComponents/Inputs";
 
 export interface IFormData {
   email?: string;

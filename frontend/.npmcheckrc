@@ -1,0 +1,14 @@
+{
+  "depcheck": {
+    "ignoreMatches": [
+      "autoprefixer",
+      "@babel/**",
+      "postcss*",
+      "jest*",
+      "@testing-library/**",
+      "tailwindcss",
+      "eslint-plugin-jest",
+      "@types/**"
+    ]
+  }
+}
