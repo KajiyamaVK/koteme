@@ -1,5 +1,5 @@
 import Button from "@mui/material/Button";
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import Image from "next/image";
 import img1 from "@@/imgs/login/img1.jpg";
 import Logo from "@/components/Logo";
@@ -55,31 +55,38 @@ export default function Login() {
     }
   }, []);
 
-  // const { register, handleSubmit } = useForm();
+  interface IHandleSubmit {
+    provider: string;
+    event?: FormEvent;
+  }
 
   const [isRegistering, setRegistering] = useState<boolean>(false);
   const [password, setPassword] = useState<string>("");
   const [email, setEmail] = useState<string>("");
-  const [money, setMoney] = useState<string>("");
 
-  async function handleSignIn() {
-    const hash = hashPassword(password);
-
+  async function handleSubmit({ provider, event }: IHandleSubmit) {
     //Consume API route to login
-    await fetch("/api/newUserRegistration", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: { email },
-        password: hash,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
+
+    event && event.preventDefault();
+
+    if (isRegistering) {
+      await fetch("/api/newUserRegistration", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: { email },
+          password: { password },
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+    } else {
+      await signIn(provider);
+    }
   }
 
   return (
@@ -114,7 +121,7 @@ export default function Login() {
       <form
         noValidate
         className="xl:w-1/2 h-screen flex m-auto items-center"
-        onSubmit={handleSignIn}
+        onSubmit={(e) => handleSubmit({ provider: "credentials", event: e })}
       >
         {/* Login Background Image using Image component */}
 
@@ -142,7 +149,10 @@ export default function Login() {
           </label>
           <EmailInput
             className="w-full border-2 border-gray-300 rounded-md p-2 mt-2"
-            value={password}
+            value={email}
+            name="email"
+            id="email"
+            onChange={(e) => setEmail(e.target.value)}
           />
           <label htmlFor="senha" className="inline-block mt-5">
             Senha {isRegistering && " (mínimo 6 caracteres)"}
@@ -191,7 +201,9 @@ export default function Login() {
               src={googleLogo}
               alt="Google Logo"
               className="h-auto w-5 mt-2 cursor-pointer"
-              onClick={() => signIn("google")}
+              onClick={() => {
+                handleSubmit({ provider: "google" });
+              }}
             />
           </div>
           <div className={`${isRegistering ? "hidden" : "block"}`}>

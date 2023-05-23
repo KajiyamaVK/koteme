@@ -21,7 +21,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 export default function Home() {
   const { data: session } = useSession();
-  console.log(session);
 
   return (
     <div>
