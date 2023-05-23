@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FormsContext } from "@/context/formsContext";
+import { set } from "react-hook-form";
 
 interface MoneyInputProps
   extends Omit<
@@ -93,9 +94,12 @@ const MoneyInput: React.FC<MoneyInputProps> = ({
     const previousHasError = hasError;
 
     // Se não houver erro, seta o hasError para false, porém se o hasError já for true, não seta para false. Se o hasError já estava como true, isso que dizer que outro componente já está com erro.
-    const isError = !error && previousHasError != true ? false : true;
-    setHasError(isError);
-  }, [error]);
+    const isError = !error && previousHasError ? false : true;
+
+    if (isError !== hasError) {
+      setHasError(isError);
+    }
+  }, [error, setHasError, hasError]);
 
   useEffect(() => {
     if (onChange) {
